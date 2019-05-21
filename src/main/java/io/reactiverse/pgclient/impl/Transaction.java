@@ -185,6 +185,11 @@ class Transaction extends PgConnectionBase<Transaction> implements PgTransaction
   }
 
   @Override
+  public void close() {
+    rollback();
+  }
+
+  @Override
   public PgTransaction abortHandler(Handler<Void> handler) {
     failedHandler = handler;
     return this;

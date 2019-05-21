@@ -95,4 +95,9 @@ public interface PgTransaction extends PgClient {
   @Override
   @GenIgnore
   <R> PgTransaction preparedBatch(String sql, List<Tuple> batch, Collector<Row, ?, R> collector, Handler<AsyncResult<PgResult<R>>> handler);
+
+  /**
+   * Rollback the transaction and release the associated resources.
+   */
+  void close();
 }

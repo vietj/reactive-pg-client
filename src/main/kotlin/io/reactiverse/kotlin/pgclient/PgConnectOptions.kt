@@ -63,6 +63,8 @@ import java.util.concurrent.TimeUnit
  * @param sendBufferSize 
  * @param soLinger 
  * @param ssl 
+ * @param sslHandshakeTimeout 
+ * @param sslHandshakeTimeoutUnit 
  * @param sslMode  Set [io.reactiverse.pgclient.SslMode] for the client, this option can be used to provide different levels of secure protection.
  * @param tcpCork 
  * @param tcpFastOpen 
@@ -113,6 +115,8 @@ fun pgConnectOptionsOf(
   sendBufferSize: Int? = null,
   soLinger: Int? = null,
   ssl: Boolean? = null,
+  sslHandshakeTimeout: Long? = null,
+  sslHandshakeTimeoutUnit: TimeUnit? = null,
   sslMode: SslMode? = null,
   tcpCork: Boolean? = null,
   tcpFastOpen: Boolean? = null,
@@ -230,6 +234,12 @@ fun pgConnectOptionsOf(
   }
   if (ssl != null) {
     this.setSsl(ssl)
+  }
+  if (sslHandshakeTimeout != null) {
+    this.setSslHandshakeTimeout(sslHandshakeTimeout)
+  }
+  if (sslHandshakeTimeoutUnit != null) {
+    this.setSslHandshakeTimeoutUnit(sslHandshakeTimeoutUnit)
   }
   if (sslMode != null) {
     this.setSslMode(sslMode)
@@ -306,6 +316,8 @@ fun pgConnectOptionsOf(
  * @param sendBufferSize 
  * @param soLinger 
  * @param ssl 
+ * @param sslHandshakeTimeout 
+ * @param sslHandshakeTimeoutUnit 
  * @param sslMode  Set [io.reactiverse.pgclient.SslMode] for the client, this option can be used to provide different levels of secure protection.
  * @param tcpCork 
  * @param tcpFastOpen 
@@ -324,7 +336,7 @@ fun pgConnectOptionsOf(
  */
 @Deprecated(
   message = "This function will be removed in a future version",
-  replaceWith = ReplaceWith("pgConnectOptionsOf(cachePreparedStatements, connectTimeout, crlPaths, crlValues, database, enabledCipherSuites, enabledSecureTransportProtocols, host, hostnameVerificationAlgorithm, idleTimeout, idleTimeoutUnit, jdkSslEngineOptions, keyStoreOptions, localAddress, logActivity, metricsName, openSslEngineOptions, password, pemKeyCertOptions, pemTrustOptions, pfxKeyCertOptions, pfxTrustOptions, pipeliningLimit, port, proxyOptions, receiveBufferSize, reconnectAttempts, reconnectInterval, reuseAddress, reusePort, sendBufferSize, soLinger, ssl, sslMode, tcpCork, tcpFastOpen, tcpKeepAlive, tcpNoDelay, tcpQuickAck, trafficClass, trustAll, trustStoreOptions, useAlpn, usePooledBuffers, user)")
+  replaceWith = ReplaceWith("pgConnectOptionsOf(cachePreparedStatements, connectTimeout, crlPaths, crlValues, database, enabledCipherSuites, enabledSecureTransportProtocols, host, hostnameVerificationAlgorithm, idleTimeout, idleTimeoutUnit, jdkSslEngineOptions, keyStoreOptions, localAddress, logActivity, metricsName, openSslEngineOptions, password, pemKeyCertOptions, pemTrustOptions, pfxKeyCertOptions, pfxTrustOptions, pipeliningLimit, port, proxyOptions, receiveBufferSize, reconnectAttempts, reconnectInterval, reuseAddress, reusePort, sendBufferSize, soLinger, ssl, sslHandshakeTimeout, sslHandshakeTimeoutUnit, sslMode, tcpCork, tcpFastOpen, tcpKeepAlive, tcpNoDelay, tcpQuickAck, trafficClass, trustAll, trustStoreOptions, useAlpn, usePooledBuffers, user)")
 )
 fun PgConnectOptions(
   cachePreparedStatements: Boolean? = null,
@@ -360,6 +372,8 @@ fun PgConnectOptions(
   sendBufferSize: Int? = null,
   soLinger: Int? = null,
   ssl: Boolean? = null,
+  sslHandshakeTimeout: Long? = null,
+  sslHandshakeTimeoutUnit: TimeUnit? = null,
   sslMode: SslMode? = null,
   tcpCork: Boolean? = null,
   tcpFastOpen: Boolean? = null,
@@ -477,6 +491,12 @@ fun PgConnectOptions(
   }
   if (ssl != null) {
     this.setSsl(ssl)
+  }
+  if (sslHandshakeTimeout != null) {
+    this.setSslHandshakeTimeout(sslHandshakeTimeout)
+  }
+  if (sslHandshakeTimeoutUnit != null) {
+    this.setSslHandshakeTimeoutUnit(sslHandshakeTimeoutUnit)
   }
   if (sslMode != null) {
     this.setSslMode(sslMode)

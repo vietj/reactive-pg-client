@@ -30,7 +30,7 @@ To use the Reactive Postgres Client add the following dependency to the _depende
 <dependency>
  <groupId>io.reactiverse</groupId>
  <artifactId>reactive-pg-client</artifactId>
- <version>0.11.2</version>
+ <version>0.11.4</version>
 </dependency>
 ```
 
@@ -38,7 +38,7 @@ To use the Reactive Postgres Client add the following dependency to the _depende
 
 ```groovy
 dependencies {
- compile 'io.reactiverse:reactive-pg-client:0.11.2'
+ compile 'io.reactiverse:reactive-pg-client:0.11.4'
 }
 ```
 
